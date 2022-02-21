@@ -3,9 +3,7 @@ import {
   Avatar,
   Box,
   Circle,
-  Container,
-  Grid,
-  HStack,
+  Flex,
   Input,
   InputGroup,
   InputLeftElement,
@@ -31,15 +29,10 @@ const Message = () => {
     }
   };
   return (
-    <Container>
-      <Box minW="xl" borderWidth="1px" borderRadius="lg" overflow="hidden">
-        <Box
-          background="gray.100"
-          display="flex"
-          justifyContent="space-between"
-          p={4}
-        >
-          <Box display="flex">
+    <Flex w="40%" bg="gray.100" flexDirection="column" overflow="scroll">
+      <Box p={8} h="full">
+        <Flex bg="gray.200" p={4} justifyContent="space-between">
+          <Flex>
             <Avatar src="https://bit.ly/ryan-florence" />
             <Box pl={2}>
               <Text fontWeight="semibold">Test Name</Text>
@@ -47,31 +40,32 @@ const Message = () => {
                 last online 5 hours ago
               </Text>
             </Box>
-          </Box>
+          </Flex>
 
-          <HStack>
-            <Circle size="40px" bg="white" color="black">
-              <Icon as={GrAttachment} />
-            </Circle>
-            <Circle size="40px" bg="white" color="black">
-              <Icon as={BsThreeDotsVertical} />
-            </Circle>
-          </HStack>
-        </Box>
-        <Box maxW="xl" borderWidth="1px" overflow="hidden">
-          <Text fontSize="md">
+          <Flex>
+            <Flex pr={1}>
+              <Circle size="40px" bg="white" color="black">
+                <Icon as={GrAttachment} />
+              </Circle>
+            </Flex>
+            <Flex>
+              <Circle size="40px" bg="white" color="black">
+                <Icon as={BsThreeDotsVertical} />
+              </Circle>
+            </Flex>
+          </Flex>
+        </Flex>
+        <Box borderWidth="1px" h="700px">
+          <Text fontSize="md" pb={2}>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
             aliquid inventore quos, cumque voluptatibus quasi voluptatem esse
-            asperiores vero. Optio enim magnam nulla dolorem consectetur
-            quibusdam culpa. Eaque, molestiae nulla. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Odio aliquid inventore quos, cumque
-            voluptatibus quasi voluptatem esse asperiores vero. Optio enim
-            magnam nulla dolorem consectetur quibusdam culpa. Eaque, molestiae
-            nulla.
+            asperiores vero. Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. Ea optio magni facere iure maxime maiores quod repellat iste
+            tenetur fugit quas, veritatis exp
           </Text>
         </Box>
 
-        <Box maxW="xl" borderWidth="1px" overflow="hidden">
+        <Box borderWidth="1p">
           {icons ? (
             <Box>
               <Circle size="40px" bg="#2A8BF2" color="white">
@@ -87,7 +81,6 @@ const Message = () => {
           ) : null}
 
           <InputGroup>
-            icons === true ?{" "}
             <Circle size="40px" bg="#2A8BF2" color="white" onClick={IconsOpen}>
               <InputLeftElement
                 pointerEvents="none"
@@ -106,7 +99,7 @@ const Message = () => {
           </InputGroup>
         </Box>
       </Box>
-    </Container>
+    </Flex>
   );
 };
 
