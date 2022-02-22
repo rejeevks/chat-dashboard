@@ -18,31 +18,31 @@ import ChatCard from "./ChatCard";
 const Chats = () => {
   const peoples = [
     {
-      name: "AAAA",
+      name: "name1",
       time: "10 minute ago",
       message: "hai",
       photo: "https://bit.ly/dan-abramov",
     },
     {
-      name: "BBBB",
+      name: "name2",
       time: "20 minute ago",
       message: "hello",
       photo: "https://bit.ly/code-beast",
     },
     {
-      name: "CCCC",
+      name: "name3",
       time: "30 minute ago",
       message: "TEST",
       photo: "https://bit.ly/kent-c-dodds",
     },
     {
-      name: "DDDDD",
+      name: "name4",
       time: "40 minute ago",
       message: "test hai",
       photo: "https://bit.ly/ryan-florence",
     },
     {
-      name: "EEEEE",
+      name: "name5",
       time: "50 minute ago",
       message: "test hai hello",
       photo: "https://bit.ly/prosper-baba",

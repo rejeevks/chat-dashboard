@@ -1,15 +1,20 @@
 import React from "react";
-import Chats from "./components/Chats";
-import SideBar from "./components/SideBar";
-import Message from "./components/Message";
 import { Flex } from "@chakra-ui/react";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Signup from "./components/Signup";
 
 function App() {
   return (
-    <Flex bg="gray.300" h="100vh">
-      <SideBar />
-      <Chats />
-      <Message />
+    <Flex bg="gray.500" h="100vh">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="signup" element={<Signup />}></Route>
+          <Route path="dashboard" element={<Dashboard />}></Route>
+        </Routes>
+      </Router>
     </Flex>
   );
 }

@@ -35,7 +35,7 @@ const Message = () => {
           <Flex>
             <Avatar src="https://bit.ly/ryan-florence" />
             <Box pl={2}>
-              <Text fontWeight="semibold">Test Name</Text>
+              <Text fontWeight="semibold">Name</Text>
               <Text fontSize="md" color="blue.500">
                 last online 5 hours ago
               </Text>
@@ -63,11 +63,8 @@ const Message = () => {
             elit. Ea optio magni facere iure maxime maiores quod repellat iste
             tenetur fugit quas, veritatis exp
           </Text>
-        </Box>
-
-        <Box borderWidth="1p">
           {icons ? (
-            <Box>
+            <Box pt={472}>
               <Circle size="40px" bg="#2A8BF2" color="white">
                 <Icon as={AiOutlineFile} />
               </Circle>
@@ -79,7 +76,9 @@ const Message = () => {
               </Circle>
             </Box>
           ) : null}
+        </Box>
 
+        <Box borderWidth="1p">
           <InputGroup>
             <Circle size="40px" bg="#2A8BF2" color="white" onClick={IconsOpen}>
               <InputLeftElement
