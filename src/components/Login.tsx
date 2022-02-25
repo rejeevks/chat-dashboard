@@ -31,7 +31,6 @@ const Login = () => {
     } else {
       setAccount(true);
     }
-    console.log(localName, localPassword);
   };
 
   return (

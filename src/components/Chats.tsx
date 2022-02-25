@@ -86,8 +86,9 @@ const Chats = () => {
       </Flex>
       <Flex overflow="scroll">
         <Box pb={10} pl={10}>
-          {peoples.map((item: any) => (
+          {peoples.map((item: any, i) => (
             <ChatCard
+              key={i}
               name={item.name}
               time={item.time}
               message={item.message}

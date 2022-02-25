@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Flex } from "@chakra-ui/react";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
@@ -6,13 +6,23 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Signup from "./components/Signup";
 
 function App() {
+  const [status, setStatus] = useState<Boolean>();
+
+  useEffect(() => {
+    if ("password" in localStorage) {
+      setStatus(true);
+    } else {
+      setStatus(false);
+    }
+  }, []);
+
   return (
     <Flex bg="gray.500" h="100vh">
       <Router>
         <Routes>
-          <Route path="/" element={<Login />}></Route>
-          <Route path="signup" element={<Signup />}></Route>
-          <Route path="dashboard" element={<Dashboard />}></Route>
+          <Route path="/" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="dashboard" element={<Dashboard authorized={status} />} />
         </Routes>
       </Router>
     </Flex>
