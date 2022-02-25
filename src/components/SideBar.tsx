@@ -5,14 +5,21 @@ import { BsChatDots, BsGrid } from "react-icons/bs";
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 import { RiCalendarTodoLine } from "react-icons/ri";
 import { VscChevronDown } from "react-icons/vsc";
-
 import {
   IoSettingsOutline,
   IoPersonOutline,
   IoNotificationsOutline,
 } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
     <Flex bg="white" w="20%">
       <Flex align="flex-start" direction="column">
@@ -57,7 +64,11 @@ const SideBar = () => {
           <Text pl={4}>SETTINGS</Text>
         </Flex>
         <Flex pt={32}>
-          <Flex p={6} _hover={{ color: "blue.400", borderLeft: "4px" }}>
+          <Flex
+            p={6}
+            _hover={{ color: "blue.400", borderLeft: "4px" }}
+            onClick={logout}
+          >
             <Icon as={MdOutlinePowerSettingsNew} boxSize={6} />
             <Text pl={4}>LOG OUT</Text>
           </Flex>

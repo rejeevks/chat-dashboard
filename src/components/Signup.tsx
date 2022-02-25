@@ -11,9 +11,10 @@ const Signup = () => {
   const UserSignup = () => {
     localStorage.setItem("name", name);
     localStorage.setItem("password", password);
-
     navigate("/");
+    window.location.reload();
   };
+
   return (
     <Flex flexDirection="column" p={80}>
       <Grid>
@@ -22,7 +23,7 @@ const Signup = () => {
         </Heading>
         <Flex>
           <Input
-            type="text" 
+            type="text"
             placeholder="User Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
