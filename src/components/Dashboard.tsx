@@ -6,9 +6,9 @@ import SideBar from "./SideBar";
 import { Navigate } from "react-router-dom";
 
 const Dashboard = ({ authorized }: any) => {
-  if (authorized === false) {
-    return <Navigate to="/" />;
-  }
+  // if (authorized === false) {
+  //   return <Navigate to="/" />;
+  // }
 
   return (
     <Flex bg="gray.300" h="100vh">
