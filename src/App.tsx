@@ -16,14 +16,21 @@ function App() {
       setStatus(false);
     }
   }, []);
-console.log(status)
+  
   return (
     <Flex bg="gray.500" h="100vh">
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="dashboard" element={ <PrivateRoute isAuthenticated ={status}><Dashboard/></PrivateRoute> } />
+          <Route
+            path="dashboard"
+            element={
+              <PrivateRoute isAuthenticated={status}>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
           {/* <Route path="dashboard" element={<Dashboard authorized={status} />} /> */}
         </Routes>
       </Router>
